@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-02-09T14:15:25.751Z",
+    "end": "2021-02-09T14:15:27.029Z",
+    "duration": 1278,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "09e7c6dc-119f-4080-babd-84275075932a",
+      "title": "",
+      "fullFile": "cypress/integration/Learn_API_Testing/users.spec.js",
+      "file": "cypress/integration/Learn_API_Testing/users.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3dda13b7-6507-47cf-ae3c-24ed71045db8",
+          "title": "Users API",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "returns a JSON data",
+              "fullTitle": "Users API returns a JSON data",
+              "timedOut": null,
+              "duration": 340,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@users').its('headers').its('content-type').should('include', 'application/json');",
+              "err": {},
+              "uuid": "51bd364c-667b-424d-a12b-6869e9b0a271",
+              "parentUUID": "3dda13b7-6507-47cf-ae3c-24ed71045db8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "return the correct status code",
+              "fullTitle": "Users API return the correct status code",
+              "timedOut": null,
+              "duration": 448,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@users').its('status').should('be.equal', 200);",
+              "err": {},
+              "uuid": "fd83d3bd-f9ed-4d9f-8ee1-ed72b2a10b41",
+              "parentUUID": "3dda13b7-6507-47cf-ae3c-24ed71045db8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return the correct number of users",
+              "fullTitle": "Users API should return the correct number of users",
+              "timedOut": null,
+              "duration": 463,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@users').its('body').should('have.length', 10);",
+              "err": {},
+              "uuid": "a6d2be92-7f7a-4d59-821a-56862e520cfe",
+              "parentUUID": "3dda13b7-6507-47cf-ae3c-24ed71045db8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "51bd364c-667b-424d-a12b-6869e9b0a271",
+            "fd83d3bd-f9ed-4d9f-8ee1-ed72b2a10b41",
+            "a6d2be92-7f7a-4d59-821a-56862e520cfe"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1251,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

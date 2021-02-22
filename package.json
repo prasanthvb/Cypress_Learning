@@ -1,0 +1,24 @@
+{
+  "name": "cypress-practice",
+  "version": "1.0.0",
+  "description": "cypress practice",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "merge": "mochawsome-merge cypress/reports/*.json > cypress/reports/output.json",
+    "generate_mochawsome_report": "marge cypress/reports/output.json --reportDir ./ --inline",
+    "final_report": "npm run merge && npm run generate_mochawsome_report"
+  },
+  "author": "Prasanth V B",
+  "license": "ISC",
+  "devDependencies": {
+    "@bahmutov/cy-api": "^1.4.3",
+    "cypress": "^6.4.0",
+    "cypress-file-upload": "^5.0.2",
+    "cypress-multi-reporters": "^1.4.0",
+    "mocha": "^8.2.1",
+    "mochawesome": "^6.2.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.1.0"
+  }
+}

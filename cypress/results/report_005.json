@@ -1,0 +1,183 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-02-09T14:15:21.388Z",
+    "end": "2021-02-09T14:15:24.222Z",
+    "duration": 2834,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bac1f85e-f3c9-4923-817c-818c84126731",
+      "title": "",
+      "fullFile": "cypress/integration/Learn_API_Testing/todos.spec.js",
+      "file": "cypress/integration/Learn_API_Testing/todos.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "464e7711-285f-4d70-bac0-41b3e3a8d376",
+          "title": "Todo API",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "returns a JSON data",
+              "fullTitle": "Todo API returns a JSON data",
+              "timedOut": null,
+              "duration": 866,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('/todos').its('headers').its('content-type').should('include', 'application/json');",
+              "err": {},
+              "uuid": "66af5d3f-19c3-4e6a-bf22-081d05464b96",
+              "parentUUID": "464e7711-285f-4d70-bac0-41b3e3a8d376",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "has the correct status code",
+              "fullTitle": "Todo API has the correct status code",
+              "timedOut": null,
+              "duration": 324,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('/todos').its('status').should('be.equal', 200);",
+              "err": {},
+              "uuid": "e3eae041-a04b-42b2-b3c8-dde3f34cd577",
+              "parentUUID": "464e7711-285f-4d70-bac0-41b3e3a8d376",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "loads all the todos from a specific user ID",
+              "fullTitle": "Todo API loads all the todos from a specific user ID",
+              "timedOut": null,
+              "duration": 570,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('/todos/?userId=1').then(function (res) {\n  res.body.forEach(function (item) {\n    return expect(item.userId).to.equal(1);\n  });\n});",
+              "err": {},
+              "uuid": "2c8dc580-9624-44d5-9a64-afcaea51ee89",
+              "parentUUID": "464e7711-285f-4d70-bac0-41b3e3a8d376",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "marks todo item as completed",
+              "fullTitle": "Todo API marks todo item as completed",
+              "timedOut": null,
+              "duration": 488,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('PATCH', '/todos/1', {\n  completed: true\n}).its('body').its('completed').should('be.equal', true);",
+              "err": {},
+              "uuid": "b5fdef09-1ccd-477d-b685-3e5031768d5a",
+              "parentUUID": "464e7711-285f-4d70-bac0-41b3e3a8d376",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "marks todo item as completed - different way",
+              "fullTitle": "Todo API marks todo item as completed - different way",
+              "timedOut": null,
+              "duration": 517,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'PATCH',\n  url: '/todos/1',\n  body: {\n    completed: true\n  }\n}).its('body').its('completed').should('be.equal', true);",
+              "err": {},
+              "uuid": "195df9bd-ad00-419d-8923-045ed5360594",
+              "parentUUID": "464e7711-285f-4d70-bac0-41b3e3a8d376",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "66af5d3f-19c3-4e6a-bf22-081d05464b96",
+            "e3eae041-a04b-42b2-b3c8-dde3f34cd577",
+            "2c8dc580-9624-44d5-9a64-afcaea51ee89",
+            "b5fdef09-1ccd-477d-b685-3e5031768d5a",
+            "195df9bd-ad00-419d-8923-045ed5360594"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2765,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

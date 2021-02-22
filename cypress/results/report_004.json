@@ -1,0 +1,180 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 0,
+    "pending": 0,
+    "failures": 4,
+    "start": "2021-02-09T14:15:19.087Z",
+    "end": "2021-02-09T14:15:19.841Z",
+    "duration": 754,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fb72a20b-3f44-43df-b68e-0627509a085e",
+      "title": "",
+      "fullFile": "cypress/integration/Learn_API_Testing/posts.spec.js",
+      "file": "cypress/integration/Learn_API_Testing/posts.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e027c818-bf52-4dcb-8076-c291e63385b8",
+          "title": "Post API",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "loads all the posts successfully",
+              "fullTitle": "Post API loads all the posts successfully",
+              "timedOut": null,
+              "duration": 175,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  url: '/posts'\n}).then(function (res) {\n  expect(res.status).to.equal(200);\n  expect(res.body.length).to.equal(100);\n});",
+              "err": {
+                "message": "TypeError: cy.api is not a function",
+                "estack": "TypeError: cy.api is not a function\n    at Context.eval (http://jsonplaceholder.typicode.com/__cypress/tests?p=cypress/integration/Learn_API_Testing/posts.spec.js:102:8)",
+                "diff": null
+              },
+              "uuid": "13f68f66-6170-4de1-8344-9266b1d0826c",
+              "parentUUID": "e027c818-bf52-4dcb-8076-c291e63385b8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "loads the correct amount of posts per user",
+              "fullTitle": "Post API loads the correct amount of posts per user",
+              "timedOut": null,
+              "duration": 195,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  url: '/posts?userId=1'\n}).its('body').should('have.length', 10);",
+              "err": {
+                "message": "TypeError: cy.api is not a function",
+                "estack": "TypeError: cy.api is not a function\n    at Context.eval (http://jsonplaceholder.typicode.com/__cypress/tests?p=cypress/integration/Learn_API_Testing/posts.spec.js:110:8)",
+                "diff": null
+              },
+              "uuid": "fba6b98d-5ed1-4862-8568-a12430dec045",
+              "parentUUID": "e027c818-bf52-4dcb-8076-c291e63385b8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add a new post successfully",
+              "fullTitle": "Post API should add a new post successfully",
+              "timedOut": null,
+              "duration": 142,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: 'POST',\n  url: '/posts?userId=1',\n  body: {\n    userId: 1,\n    title: 'foo',\n    body: 'var'\n  }\n}).then(function (response) {\n  expect(response.status).to.equal(201);\n  expect(response.body.id).to.equal(101);\n});",
+              "err": {
+                "message": "TypeError: cy.api is not a function",
+                "estack": "TypeError: cy.api is not a function\n    at Context.eval (http://jsonplaceholder.typicode.com/__cypress/tests?p=cypress/integration/Learn_API_Testing/posts.spec.js:115:8)",
+                "diff": null
+              },
+              "uuid": "5587c7a2-aaa7-41c5-b03c-4b2c978a7dff",
+              "parentUUID": "e027c818-bf52-4dcb-8076-c291e63385b8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should delete a post successfully",
+              "fullTitle": "Post API should delete a post successfully",
+              "timedOut": null,
+              "duration": 139,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: 'DELETE',\n  url: '/posts/1'\n}).its('status').should('be.equal', 200);",
+              "err": {
+                "message": "TypeError: cy.api is not a function",
+                "estack": "TypeError: cy.api is not a function\n    at Context.eval (http://jsonplaceholder.typicode.com/__cypress/tests?p=cypress/integration/Learn_API_Testing/posts.spec.js:129:8)",
+                "diff": null
+              },
+              "uuid": "7d512920-020d-40b8-9de6-2a06a0e3a4c9",
+              "parentUUID": "e027c818-bf52-4dcb-8076-c291e63385b8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "13f68f66-6170-4de1-8344-9266b1d0826c",
+            "fba6b98d-5ed1-4862-8568-a12430dec045",
+            "5587c7a2-aaa7-41c5-b03c-4b2c978a7dff",
+            "7d512920-020d-40b8-9de6-2a06a0e3a4c9"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 651,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
